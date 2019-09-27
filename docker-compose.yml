@@ -6,7 +6,6 @@ services:
      container_name: wpdev_mysql
      volumes:
        - database:/var/lib/mysql
-     restart: always
      environment:
        MYSQL_ROOT_PASSWORD: wordpress
        MYSQL_DATABASE: wordpress
@@ -21,7 +20,6 @@ services:
         - db
      ports:
         - "8001:80"
-     restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_PASSWORD: wordpress
@@ -29,10 +27,10 @@ volumes:
   wordpress:
     driver_opts:
       type: none
-      device: /Users/chikuchu/docker/wordpress/app/
+      device: /Users/youraccount/docker/wordpress/app/
       o: bind
   database:
     driver_opts:
       type: none
-      device: /Users/chikuchu/docker/wordpress/db/
+      device: /Users/youraccount/docker/wordpress/db/
       o: bind
